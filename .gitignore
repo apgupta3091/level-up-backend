@@ -2,23 +2,23 @@
 .env
 .env.local
 
-# Binaries
-bin/
+# Go binaries
+backend/bin/
 *.exe
-*.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary
 *.test
-
-# Output
 *.out
 
 # Go workspace
 go.work
 go.work.sum
+
+# Frontend
+frontend/.next/
+frontend/node_modules/
+frontend/.env.local
 
 # IDE
 .idea/
@@ -29,6 +29,3 @@ go.work.sum
 # OS
 .DS_Store
 Thumbs.db
-
-# Docker volumes
-postgres_data/
