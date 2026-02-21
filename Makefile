@@ -39,6 +39,10 @@ db/down: ## Stop postgres container
 db/shell: ## Open psql shell
 	docker compose exec postgres psql -U $(POSTGRES_USER) -d $(POSTGRES_DB)
 
+.PHONY: db/seed
+db/seed: ## Load seed data
+	docker compose exec -T postgres psql -U $(POSTGRES_USER) -d $(POSTGRES_DB) < db/seed.sql
+
 # ── Migrations ────────────────────────────────────────────────────────────────
 
 .PHONY: migrate/up
